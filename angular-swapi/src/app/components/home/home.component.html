@@ -1,0 +1,36 @@
+<h1 class="text-center">Listado de Peliculas</h1>
+
+<div *ngIf="spiner" class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Cargando...</span>
+    </div>
+</div>
+
+   
+<table *ngIf="!spiner" class="table mt-2 table-striped">
+    <thead class="thead-dark">
+        <tr class="text-center">
+            <th scope="col">Titulo</th>
+            <th scope="col">Episodio</th>
+            <th scope="col">Director</th>
+            <th scope="col">Productor</th>
+            <th scope="col">Fecha Estreno</th>
+            <th scope="col">Detalles</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="text-center" *ngFor="let item of listFilms">
+            <th scope="row">{{item?.title}}</th>
+            <td>{{item.episode_id}}</td>
+            <td>{{item.director}}</td>
+            <td>{{item.producer}}</td>
+            <td>{{item.release_date}}</td>
+            <td>
+                <a routerLink="/film/{{obtenerIdPelicula(item.url)}}" class="btn btn-primary">Ver</a>
+            </td>
+        </tr>
+        
+    </tbody>
+</table>
+      
+

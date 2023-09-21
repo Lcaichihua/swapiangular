@@ -1,0 +1,30 @@
+<h2>Detalle Pelicula</h2>
+
+<div *ngIf="spiner" class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+<div *ngIf="!spiner" class="card text-center">
+    <div class="card-header">
+        <strong>{{film?.name}}</strong>        
+    </div>
+    <div class="card-body">
+        <h5 class="card-title"> Titulo: {{film?.title}}</h5>
+        <img
+    
+    src="https://hips.hearstapps.com/hmg-prod/images/el-ataque-de-los-clones-1575448990.jpg?crop=1xw:1xh;center,top&resize=980:*"
+    alt="Photo of a Shiba Inu" width="250" height="250"
+  />
+        <p class="card-text">Director : {{film?.director}}</p>
+        <p class="card-text">Episodio: {{film?.episode_id}}</p>
+        <p class="card-text">Opening : {{film?.opening_crawl}}</p>
+        
+    </div>
+    <div class="card-footer text-muted">
+        <a routerLink="/home" class="btn btn-primary">Volver</a>
+    </div>
+</div>
+
+
